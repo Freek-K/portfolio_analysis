@@ -1,0 +1,8 @@
+venv/
+config.yml
+*.log
+*.cache
+__pycache__/
+.ipynb_checkpoints/
+*.csv
+*.bak
