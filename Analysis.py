@@ -8,7 +8,7 @@ from pathlib import Path
 from collections import defaultdict
 
 parser = argparse.ArgumentParser(prog='ParsePortofolioDump',
-                                 description='Parse a deGiro portofolio csv file for importing into google sheets',
+                                 description='Parse a deGiro broker portofolio csv dump for further analysis',
                                  epilog='Made by Freek Kalter')
 parser.add_argument('-o', '--output', default='out.csv',
                     help='output filename for portfolio info')
@@ -90,7 +90,7 @@ def search(transactions, date, product, description):
                 return row['Bedrag']
         except KeyError:
             pass
-    print(f'No taxes found for "{product}" on {date}')
+    print(f'No {description.lower()} found for "{product}" on {date}')
     return 0
 
 
